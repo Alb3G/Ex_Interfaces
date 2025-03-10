@@ -6,6 +6,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 
+/**
+ * Clase que representa un producto
+ * @author albertoguzman
+ */
 @Data
 @Document(collection = "Items")
 public class Item implements Serializable {

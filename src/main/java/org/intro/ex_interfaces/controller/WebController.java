@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * WebController que gestiona las diferentes vistas para los usuarios
+ * @author albertoguzman
+ */
 @Controller
 @RequestMapping("/api")
 public class WebController {
@@ -15,6 +19,11 @@ public class WebController {
     @Autowired
     private ProductRepository productRepository;
 
+    /**
+     * Método que devuelve la vista principal con el listado de productos
+     * @param model modelo que se enviara a la vista con los datos
+     * @return vista principal
+     */
     @GetMapping("/products")
     public String greeting(Model model) {
         var products = productRepository.findAll();
@@ -23,6 +32,12 @@ public class WebController {
         return "index";
     }
 
+    /**
+     * Método que devuelve la vista de detalle de un producto
+     * @param model modelo que se enviara a la vista con los datos
+     * @param id identificador del producto
+     * @return vista de detalle
+     */
     @GetMapping("/product/{id}")
     public String product(Model model, @PathVariable String id) {
         var item = productRepository.findById(id);
