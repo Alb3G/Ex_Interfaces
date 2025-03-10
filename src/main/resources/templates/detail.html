@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${product.title}"></title>
+</head>
+<body>
+    <h1 th:text="${product.title}"></h1>
+    <p><strong>Price:</strong> <span th:text="${product.price}"></span></p>
+    <p><strong>Category:</strong> <span th:text="${product.category}"></span></p>
+    <p><strong>Description:</strong> <span th:text="${product.description}"></span></p>
+    <p><strong>Rate:</strong> <span th:text="${product.rate}"></span></p>
+    <p><strong>Count:</strong> <span th:text="${product.count}"></span></p>
+    <img th:src="${product.image}" alt="Product Image" width="200">
+</body>
+</html>
